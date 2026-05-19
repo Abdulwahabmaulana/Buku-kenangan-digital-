@@ -14,7 +14,7 @@ import {
   getDocFromServer 
 } from 'firebase/firestore';
 import { 
-  signInWithPopup,
+  signInWithRedirect,
   GoogleAuthProvider,
   onAuthStateChanged,
   User as FirebaseUser
@@ -1084,10 +1084,10 @@ function BookApp() {
       prompt: 'select_account'
     });
     try {
-      await signInWithPopup(auth, provider);
+      await signInWithRedirect(auth, provider);
     } catch (error) {
       console.error("Login error:", error);
-      alert("Gagal masuk dengan Google. Pastikan pop-up diizinkan.");
+      alert("Gagal masuk dengan Google.");
     }
   };
 
