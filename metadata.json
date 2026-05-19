@@ -1,0 +1,8 @@
+{
+  "name": "Buku Kenangan Digital",
+  "description": "Aplikasi pencarian dan manajemen buku dengan fitur import/export dan PWA.",
+  "requestFramePermissions": [
+    "camera"
+  ],
+  "majorCapabilities": []
+}
