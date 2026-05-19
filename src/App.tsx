@@ -1080,6 +1080,9 @@ function BookApp() {
 
   const handleLogin = async () => {
     const provider = new GoogleAuthProvider();
+    provider.setCustomParameters({
+      prompt: 'select_account'
+    });
     try {
       await signInWithPopup(auth, provider);
     } catch (error) {
@@ -1415,7 +1418,7 @@ function BookApp() {
         <div className={`w-24 h-24 ${t.accent} rounded-full flex items-center justify-center mb-6 animate-bounce`}>
           <Book className={`w-12 h-12 ${t.text}`} />
         </div>
-        <h1 className="text-3xl font-bold text-gray-800 mb-2">Buku Kenangan</h1>
+        <h1 className="text-3xl font-bold text-gray-800 mb-2">Buku Kenangan Digital</h1>
         <p className="text-gray-500 mb-8">Simpan dan kelola koleksi buku pribadimu dengan mudah.</p>
         <button 
           onClick={handleLogin}
