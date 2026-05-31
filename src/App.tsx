@@ -25,8 +25,7 @@ import {
   Settings, ChevronDown, ChevronUp, Layers, Palette, Download, SortAsc, LogOut, Upload,
   Info, Phone, GitBranch, Code, Smartphone
 } from 'lucide-react';
-import { db, auth } from './firebase';
-import firebaseConfig from '../firebase-applet-config.json';
+import { db, auth, firebaseConfig } from './firebase';
 
 import { Html5Qrcode } from 'html5-qrcode';
 import * as XLSX from 'xlsx';
