@@ -1084,10 +1084,13 @@ function BookApp() {
     });
     try {
       await signInWithPopup(auth, provider);
-    } catch (error) {
-      console.error("Login error:", error);
-      const errorMessage = error instanceof Error ? error.message : String(error);
-      alert("Gagal masuk dengan Google: " + errorMessage);
+    } catch (error: any) {
+      console.error("Login error full object:", error);
+      const detailError = `
+Message: ${error?.message || String(error)}
+Code: ${error?.code || 'N/A'}
+      `.trim();
+      alert("Gagal masuk dengan Google!\n" + detailError + "\n\nCek console log jika memungkinkan.");
     }
   };
 
